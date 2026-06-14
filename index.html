@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday | Selvia Alfinadinata</title>
+
+<style>
+:root{
+  --cream: #faf4e8;
+  --cream-deep: #f1e6d2;
+  --paper: #ffffff; /* Menggunakan latar kartu putih bersih */
+  --ink: #3c3024; /* Warna teks utama: Cokelat Gelap */
+  --ink-soft: #7a6a56;
+  --gold: #c9a063;
+  --gold-deep: #a9803f;
+  --gold-light: #ecd9b6;
+  --rose: #dba6a0;
+  --rose-soft: #f6e6e3;
+  --shadow: 0 22px 55px rgba(80,55,20,0.14);
+  --shadow-soft: 0 10px 30px rgba(80,55,20,0.10);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Poppins', sans-serif;
+  background-color:var(--cream);
+  background-image:radial-gradient(circle at 1px 1px, rgba(169,128,63,0.10) 1px, transparent 0);
+  background-size:26px 26px;
+  color:var(--ink);
+  text-align:center;
+  overflow-x:hidden;
+  line-height:1.8;
+}
+
+h1,h2,h3{font-family:'Playfair Display', serif;font-weight:600;color:var(--ink);}
+.script{font-family:'Cormorant Garamond', serif;}
+
+/* ---------- reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+
+.fill{
+  color:var(--gold-deep);
+  padding:0 2px;
+  font-weight:600;
+}
+
+/* ---------- ornament divider ---------- */
+.ornament-divider{display:flex;align-items:center;justify-content:center;gap:16px;margin:18px auto 30px;}
+.ornament-divider .oline{height:1px;width:46px;background:linear-gradient(to right,transparent,var(--gold));}
+.ornament-divider .oline.right{background:linear-gradient(to left,transparent,var(--gold));}
+.ornament-divider svg{width:22px;height:22px;color:var(--gold);}
+
+/* ---------- section head ---------- */
+.section{padding:80px 22px;position:relative;}
+.section-head{margin-bottom:36px;}
+.eyebrow{font-family:'Cormorant Garamond', serif;font-style:italic;font-size:1.05rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:6px;}
+.section-head h2{font-size:1.9rem; color: var(--ink);}
+
+/* ====================================================================
+   HERO
+==================================================================== */
+.hero{
+  min-height:100vh;
+  background:linear-gradient(rgba(40,28,16,.60),rgba(40,28,16,.60)), url('cover.jpeg') center/cover no-repeat, linear-gradient(160deg,#7a5a32,#3c2c18);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  padding:40px 22px;
+}
+
+.hero-particles{position:absolute;inset:0;pointer-events:none;}
+.particle{position:absolute;bottom:-10px;border-radius:50%;background:var(--gold-light);opacity:.75;animation:float-up linear infinite;}
+@keyframes float-up{
+  0%{transform:translateY(0) scale(1);opacity:.75;}
+  100%{transform:translateY(-115vh) scale(.4);opacity:0;}
+}
+
+.hero-content{position:relative;z-index:2;max-width:480px;}
+.hero-name{font-size:clamp(2.4rem,9vw,3.6rem);color:#fff;margin-bottom:6px;letter-spacing:.02em;}
+.hero-text{font-size:.98rem;font-weight:300;color:#f3ece0;margin:0 auto 14px;max-width:380px;}
+.hero-date{font-family:'Cormorant Garamond', serif;font-style:italic;font-size:1.15rem;color:var(--gold-light);margin-bottom:26px;}
+
+.open-btn{
+  margin-top:6px;
+  padding:14px 38px;
+  background:var(--gold-deep);
+  color:#fff;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:600;
+  font-family:'Poppins', sans-serif;
+  font-size:.95rem;
+  letter-spacing:.03em;
+  box-shadow:var(--shadow-soft);
+  transition:all .3s ease;
+}
+.open-btn:hover{transform:translateY(-3px);box-shadow:var(--shadow); background:var(--gold);}
+
+/* ====================================================================
+   OPENING
+==================================================================== */
+#opening{background:var(--cream);}
+.opening-text{max-width:540px;margin:0 auto;text-align:left;font-size:.98rem; color:var(--ink);}
+.opening-text p{margin-bottom:14px;}
+.opening-greeting{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:1.35rem;
+  color:var(--gold-deep);
+  text-align:center;
+  margin-bottom:22px;
+}
+
+.hadith-box{
+  position:relative;
+  background:var(--cream-deep);
+  border-radius:16px;
+  padding:28px 26px 22px;
+  margin:24px 0;
+  box-shadow:var(--shadow-soft);
+  border-left:3px solid var(--gold);
+}
+.hadith-box::before{
+  content:"\201C";
+  font-family:'Playfair Display', serif;
+  position:absolute;
+  top:-6px;left:18px;
+  font-size:3.4rem;
+  color:var(--gold-light);
+  line-height:1;
+}
+.hadith-text{font-family:'Cormorant Garamond', serif;font-style:italic;font-size:1.18rem;color:var(--ink);position:relative;z-index:1;}
+.hadith-source{
+  display:block;
+  margin-top:12px;
+  font-size:.8rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--gold-deep);
+  text-align:right;
+}
+
+/* ====================================================================
+   ABOUT HER (KARTU BIODATA)
+==================================================================== */
+.info-card{
+  max-width:440px;margin:0 auto;
+  background:var(--paper);
+  border-radius:18px;
+  padding:10px 26px;
+  box-shadow:var(--shadow-soft);
+  color: var(--ink);
+}
+.info-row{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 0;
+  text-align:left;
+  border-bottom:1px solid var(--cream-deep);
+}
+.info-row:last-child{border-bottom:none;}
+.info-icon{font-size:1.3rem;flex-shrink:0;width:30px;}
+.info-text{display:flex;flex-direction:column;gap:2px;}
+.info-label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);}
+.info-value{font-family:'Playfair Display', serif;font-size:1.02rem; color:var(--ink);}
+
+/* ====================================================================
+   LETTER FROM BROTHER
+==================================================================== */
+.letter-card{
+  max-width:560px;margin:0 auto;
+  background:var(--paper);
+  border-radius:20px;
+  padding:42px 30px;
+  box-shadow:var(--shadow);
+  text-align:left;
+  position:relative;
+  color: var(--ink);
+}
+.letter-card::before{
+  content:'';
+  position:absolute;inset:14px;
+  border:1px solid var(--gold-light);
+  border-radius:12px;
+  pointer-events:none;
+}
+.letter-greeting{font-family:'Cormorant Garamond', serif;font-style:italic;font-size:1.3rem;color:var(--gold-deep);margin-bottom:14px;}
+.letter-card p{
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.15rem;
+  color:var(--ink);
+  margin-bottom:12px;
+}
+.letter-highlight{
+  background:var(--rose-soft);
+  border-radius:12px;
+  padding:16px 18px;
+  margin:18px 0;
+  font-style:italic;
+  color: var(--ink);
+  border-left:3px solid var(--rose);
+}
+.letter-closing{
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px dashed var(--gold-light);
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:1.2rem;
+  color:var(--gold-deep);
+  text-align:center;
+}
+
+/* ====================================================================
+   PHOTO MEMORIES
+==================================================================== */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  max-width:780px;margin:0 auto;
+}
+.gallery-item{
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:var(--shadow-soft);
+  cursor:pointer;
+  background:var(--gold-light);
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.gallery-item:hover{transform:translateY(-4px) scale(1.02);box-shadow:var(--shadow);}
+.gallery-item img{
+  width:100%;aspect-ratio:1/1;
+  object-fit:cover;
+  display:block;
+  transition:transform .6s ease;
+}
+.gallery-item:hover img{transform:scale(1.08);}
+.gallery-item figcaption{
+  padding:9px 10px;
+  font-size:.74rem;
+  color:var(--ink);
+  background:var(--paper);
+  text-align:left;
+  border-top:1px solid var(--cream-deep);
+}
+
+@media(min-width:600px){
+  .gallery{grid-template-columns:repeat(3,1fr);}
+}
+
+/* lightbox */
+.lightbox{
+  position:fixed;inset:0;
+  background:rgba(30,20,10,.86);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;
+  transition:opacity .3s ease;
+  z-index:100;
+  padding:24px;
+}
+.lightbox.active{opacity:1;visibility:visible;}
+.lightbox figure{max-width:90vw;max-height:85vh;}
+.lightbox img{max-width:100%;max-height:75vh;border-radius:10px;display:block;margin:0 auto;box-shadow:0 20px 60px rgba(0,0,0,.4);}
+.lightbox figcaption{color:var(--gold-light);font-family:'Cormorant Garamond', serif;font-style:italic;font-size:1.1rem;margin-top:14px;}
+.lightbox-close{
+  position:absolute;top:22px;right:26px;
+  background:none;border:none;color:#fff;
+  font-size:1.6rem;cursor:pointer;
+  width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,.12);
+  transition:background .25s ease;
+}
+
+/* ====================================================================
+   TIMELINE
+==================================================================== */
+.timeline{
+  position:relative;max-width:560px;margin:0 auto;
+  padding-left:38px;text-align:left;
+}
+.timeline::before{
+  content:'';
+  position:absolute;left:9px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(var(--cream),var(--gold) 12%,var(--gold) 88%,var(--cream));
+}
+.timeline-item{position:relative;margin-bottom:30px;}
+.timeline-item:last-child{margin-bottom:0;}
+.timeline-dot{
+  position:absolute;left:-38px;top:6px;
+  width:20px;height:20px;border-radius:50%;
+  background:var(--cream);border:3px solid var(--gold);
+}
+.timeline-card{
+  background:var(--paper);
+  border-radius:14px;
+  padding:16px 20px;
+  box-shadow:var(--shadow-soft);
+  color: var(--ink);
+}
+.timeline-year{
+  font-family:'Playfair Display', serif;font-weight:700;
+  color:var(--gold-deep);font-size:1.05rem;
+  display:block;margin-bottom:4px;
+}
+.timeline-event{font-size:.92rem; color: var(--ink);}
+
+/* ====================================================================
+   DOA
+==================================================================== */
+#doa{background:var(--cream-deep);}
+.doa-frame{
+  position:relative;max-width:440px;margin:0 auto;
+  background:var(--paper);
+  border:1px solid var(--gold-light);
+  border-radius:18px;
+  padding:38px 30px;
+  box-shadow:var(--shadow-soft);
+  color: var(--ink);
+}
+.doa-frame .corner{position:absolute;width:26px;height:26px;color:var(--gold);}
+.doa-frame .corner.tl{top:10px;left:10px;}
+.doa-frame .corner.tr{top:10px;right:10px;transform:scaleX(-1);}
+.doa-frame .corner.bl{bottom:10px;left:10px;transform:scaleY(-1);}
+.doa-frame .corner.br{bottom:10px;right:10px;transform:scale(-1);}
+.doa-open{font-family:'Cormorant Garamond', serif;font-style:italic;font-size:1.3rem;color:var(--gold-deep);margin-bottom:14px;}
+.doa-line{font-family:'Cormorant Garamond', serif;font-size:1.08rem;margin-bottom:8px; color:var(--ink);}
+.doa-close{margin-top:14px;font-weight:600;color:var(--gold-deep);font-family:'Playfair Display', serif;}
+
+/* ====================================================================
+   SPECIAL LETTER
+==================================================================== */
+.special-letter{
+  max-width:520px;margin:0 auto;text-align:left;
+  background:var(--paper);
+  border-radius:20px;
+  padding:38px 28px;
+  box-shadow:var(--shadow-soft);
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.12rem;
+  position:relative;
+  color: var(--ink);
+}
+.special-letter p{margin-bottom:12px; color:var(--ink);}
+.special-letter .sign{
+  margin-top:18px;font-style:italic;color:var(--gold-deep);
+  text-align:right;font-size:1.15rem;
+}
+
+/* ====================================================================
+   CLOSING
+==================================================================== */
+.closing{
+  background:linear-gradient(160deg,#4a3520,#7a5a32);
+  color:#fff;padding:90px 22px;
+  position:relative;overflow:hidden;
+}
+.closing h2{color:#fff;font-size:clamp(1.8rem,7vw,2.6rem);margin-bottom:14px;}
+.closing .grow-lines{font-family:'Cormorant Garamond', serif;font-style:italic;font-size:1.25rem;color:var(--gold-light);margin-bottom:6px;}
+.closing .tagline{margin-top:18px;font-size:.95rem;color:#f3ece0;max-width:380px;margin-inline:auto;}
+.heart{
+  font-size:2rem;display:inline-block;margin-top:20px;
+  animation:beat 1.6s ease-in-out infinite;
+}
+@keyframes beat{0%,100%{transform:scale(1);}50%{transform:scale(1.18);}}
+
+/* ====================================================================
+   MUSIC PLAYER
+==================================================================== */
+.music-toggle{
+  position:fixed;bottom:22px;right:22px;
+  width:50px;height:50px;
+  background:var(--gold);
+  color: white;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-soft);
+  cursor:pointer;z-index:90;
+  font-size:1.25rem;
+  border-radius: 50%;
+}
+.music-toggle.playing .music-icon{animation:spin 3.5s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="rosette" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <ellipse cx="50" cy="22" rx="6" ry="16"/>
+      <ellipse cx="50" cy="22" rx="6" ry="16" transform="rotate(45 50 50)"/>
+      <ellipse cx="50" cy="22" rx="6" ry="16" transform="rotate(90 50 50)"/>
+      <ellipse cx="50" cy="22" rx="6" ry="16" transform="rotate(135 50 50)"/>
+      <ellipse cx="50" cy="22" rx="6" ry="16" transform="rotate(180 50 50)"/>
+      <ellipse cx="50" cy="22" rx="6" ry="16" transform="rotate(225 50 50)"/>
+      <ellipse cx="50" cy="22" rx="6" ry="16" transform="rotate(270 50 50)"/>
+      <ellipse cx="50" cy="22" rx="6" ry="16" transform="rotate(315 50 50)"/>
+      <circle cx="50" cy="50" r="9"/>
+    </g>
+  </symbol>
+  <symbol id="corner" viewBox="0 0 60 60">
+    <path d="M2 30 V2 H30" fill="none" stroke="currentColor" stroke-width="2"/>
+    <use href="#rosette" x="2" y="2" width="20" height="20"/>
+  </symbol>
+</svg>
+
+<section class="hero" id="hero">
+  <div class="hero-particles"></div>
+  <div class="hero-content">
+    <p class="eyebrow">Happy Birthday</p>
+    <h1 class="hero-name">Selvia Alfina Dinata</h1>
+    <div class="ornament-divider">
+      <span class="oline"></span>
+      <svg><use href="#rosette"/></svg>
+      <span class="oline right"></span>
+    </div>
+    <p class="hero-text">
+      Hari ini adalah hari yang sangat spesial. Satu tahun lagi bertambah, satu tahun lagi tumbuh,
+      satu tahun lagi menjadi pribadi yang lebih kuat, lebih cerdas, dan lebih baik.
+      Untuk adik perempuan terbaik yang pernah Allah titipkan dalam keluarga ini.
+    </p>
+    <p class="hero-date">15 Juni 2026</p>
+    <button class="open-btn" onclick="openCelebration()">🎂 Buka Ucapan</button>
+  </div>
+</section>
+
+<section class="section" id="opening">
+  <div class="section-head">
+    <p class="eyebrow">Pembuka</p>
+    <h2>Assalamu'alaikum</h2>
+    <div class="ornament-divider">
+      <span class="oline"></span>
+      <svg><use href="#rosette"/></svg>
+      <span class="oline right"></span>
+    </div>
+  </div>
+
+  <div class="opening-text reveal">
+    <p class="opening-greeting">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+    <p>Hari ini adalah hari yang istimewa. Banyak orang memandang ulang tahun sebagai bertambahnya usia.
+    Namun dalam Islam, hari ini juga mengingatkan kita bahwa umur yang Allah titipkan semakin berkurang satu tahun.
+    Jika kemarin usia kita masih tersisa sekian tahun yang Allah kehendaki, maka hari ini jatah itu berkurang satu tahun lagi.</p>
+
+    <p>Rasulullah ﷺ bersabda:</p>
+    <div class="hadith-box">
+      <p class="hadith-text">"Tidak akan bergeser kedua kaki seorang hamba pada hari kiamat hingga ia ditanya tentang umurnya untuk apa ia habiskan..."</p>
+      <span class="hadith-source">— HR. At-Tirmidzi</span>
+    </div>
+
+    <p>Karena itu, hari ini bukan hanya tentang perayaan. Hari ini adalah momen untuk bersyukur.
+    Bersyukur karena Allah masih memberikan kesempatan untuk hidup, belajar, memperbaiki diri, beribadah, dan menebar kebaikan.</p>
+    <p>Dan sebagai Abang, saya bersyukur karena Allah masih mengizinkanku melihatmu improve diri hingga hari ini.</p>
+  </div>
+</section>
+
+<section class="section" id="about" style="background:var(--cream-deep);">
+  <div class="section-head">
+    <p class="eyebrow">Tentang</p>
+    <h2>Tentang Kamu</h2>
+    <div class="ornament-divider">
+      <span class="oline"></span>
+      <svg><use href="#rosette"/></svg>
+      <span class="oline right"></span>
+    </div>
+  </div>
+
+  <div class="info-card reveal">
+    <div class="info-row"><span class="info-icon">📛</span><div class="info-text"><span class="info-label">Nama</span><span class="info-value fill">Selvia Alfina Dinata</span></div></div>
+    <div class="info-row"><span class="info-icon">🎉</span><div class="info-text"><span class="info-label">Lahir</span><span class="info-value fill">15 Juni 2007</span></div></div>
+    <div class="info-row"><span class="info-icon">🎈</span><div class="info-text"><span class="info-label">Usia</span><span class="info-value"><span class="fill">19</span> Tahun</span></div></div>
+    <div class="info-row"><span class="info-icon">🎨</span><div class="info-text"><span class="info-label">Hobi</span><span class="info-value fill">Membaca Cerita, Edit Video</span></div></div>
+    <div class="info-row"><span class="info-icon">⭐</span><div class="info-text"><span class="info-label">Cita-cita</span><span class="info-value fill">Umroh dan Belajar Ke Luar Negeri</span></div></div>
+    <div class="info-row"><span class="info-icon">💫</span><div class="info-text"><span class="info-label">Fun Fact</span><span class="info-value fill">Orangnya gak bisa dibentak..., Hehehe...</span></div></div>
+  </div>
+</section>
+
+<section class="section" id="brother">
+  <div class="section-head">
+    <p class="eyebrow">Pesan</p>
+    <h2>Pesan Dari Kakak</h2>
+    <div class="ornament-divider">
+      <span class="oline"></span>
+      <svg><use href="#rosette"/></svg>
+      <span class="oline right"></span>
+    </div>
+  </div>
+
+  <div class="letter-card reveal">
+    <p class="letter-greeting">Untuk Adikku Tersayang</p>
+    <p>Adikku,</p>
+    <p>Hari ini usiamu bertambah satu tahun. Tetapi lebih dari itu, perjalanan hidupmu di dunia berkurang satu tahun.
+    Mungkin kalimat itu terdengar sederhana. Namun di situlah letak keindahan hidup seorang muslim.</p>
+    <p>Kita memahami bahwa dunia bukan tujuan akhir. Dunia adalah perjalanan menuju kehidupan yang lebih kekal.</p>
+    <p>Karena itu, Abang tidak hanya berdoa agar kamu menjadi lebih sukses. Abang juga berdoa agar kamu menjadi lebih dekat kepada Allah.
+    Aku tidak hanya berharap kamu mencapai cita-cita yang tinggi. Aku juga berharap setiap langkahmu membawa keberkahan.</p>
+    <p>Semoga Allah menjaga hatimu ketika dunia mencoba mengubahmu. Semoga Allah menjaga kehormatanmu ketika tidak ada seorang pun yang melihatmu.
+    Semoga Allah menjaga imanmu ketika ujian datang menghampirimu.</p>
+    <p>Semoga Allah menjadikanmu perempuan shalihah yang dicintai oleh keluarga, dicintai oleh manusia-manusia baik,
+    dan yang terpenting dicintai oleh Allah Subhanahu wa Ta'ala.</p>
+
+    <div class="letter-highlight">
+      Jika suatu hari nanti Abang tidak lagi berada di sampingmu, Abang berharap nasihat ini tetap kamu ingat:
+      Jangan terlalu sibuk memikirkan usia yang telah berlalu. Namun sibukkanlah dirimu untuk merefleksi diri dan menyiapkan amal yang bisa mengantarkanmu ke syurga.
+      Karena pada akhirnya bukan usia yang akan menyelamatkan kita. Melainkan amal yang kita bawa menghadap Allah.
+    </div>
+
+    <div class="letter-closing">
+      Selamat ulang tahun, adikku.<br>
+      Semoga tahun ini menjadi tahun yang lebih dekat dengan Allah daripada tahun-tahun sebelumnya.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery" style="background:var(--cream-deep);">
+  <div class="section-head">
+    <p class="eyebrow">Kenangan</p>
+    <h2>Foto Kenangan</h2>
+    <div class="ornament-divider">
+      <span class="oline"></span>
+      <svg><use href="#rosette"/></svg>
+      <span class="oline right"></span>
+    </div>
+  </div>
+  <div class="gallery" id="galleryGrid"></div>
+</section>
+
+<section class="section" id="timeline">
+  <div class="section-head">
+    <p class="eyebrow">Perjalanan</p>
+    <h2>Perjalananmu</h2>
+    <div class="ornament-divider">
+      <span class="oline"></span>
+      <svg><use href="#rosette"/></svg>
+      <span class="oline right"></span>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2007</span><p class="timeline-event">Lahir ke dunia menyejukkan hati orang tua dan melengkapi kebahagiaan keluarga.</p></div></div>
+    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2020</span><p class="timeline-event">Memulai perjalanan masa remaja dengan penuh rasa ingin tahu dan mulai belajar mandiri.</p></div></div>
+    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2023</span><p class="timeline-event">Mulai menemukan hobi bermakna dalam membaca serta mengembangkan kreativitas mengedit video.</p></div></div>
+    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2025</span><p class="timeline-event">Tumbuh menjadi sosok yang tangguh, visioner, dan memiliki mimpi besar belajar ke luar negeri.</p></div></div>
+    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2026</span><p class="timeline-event">Menginjak usia 19 tahun dengan kedewasaan berpikir yang luar biasa. Masya Allah.</p></div></div>
+  </div>
+</section>
+
+<section class="section" id="doa">
+  <div class="section-head">
+    <p class="eyebrow">Doa</p>
+    <h2>Doa Untukmu</h2>
+    <div class="ornament-divider">
+      <span class="oline"></span>
+      <svg><use href="#rosette"/></svg>
+      <span class="oline right"></span>
+    </div>
+  </div>
+
+  <div class="doa-frame reveal">
+    <svg class="corner tl"><use href="#corner"/></svg><svg class="corner tr"><use href="#corner"/></svg><svg class="corner bl"><use href="#corner"/></svg><svg class="corner br"><use href="#corner"/></svg>
+    <p class="doa-open">Ya Allah,</p>
+    <p class="doa-line">Jadikan adikku perempuan yang shalihah.</p>
+    <p class="doa-line">Lindungi langkahnya di mana pun ia berada.</p>
+    <p class="doa-line">Mudahkan pendidikannya.</p>
+    <p class="doa-line">Lapangkan rezekinya.</p>
+    <p class="doa-line">Jauhkan dari segala keburukan.</p>
+    <p class="doa-line">Penuhi hidupnya dengan orang-orang baik.</p>
+    <p class="doa-line">Dan jadikan setiap harinya lebih baik daripada hari sebelumnya.</p>
+    <p class="doa-close">Aamiin.</p>
+  </div>
+</section>
+
+<section class="section" id="special-letter" style="background:var(--cream-deep);">
+  <div class="section-head">
+    <p class="eyebrow">Surat</p>
+    <h2>Surat Kecil Untuk Adikku</h2>
+    <div class="ornament-divider">
+      <span class="oline"></span>
+      <svg><use href="#rosette"/></svg>
+      <span class="oline right"></span>
+    </div>
+  </div>
+
+  <div class="special-letter reveal">
+    <p>Jika suatu hari nanti kamu membuka halaman ini kembali, mungkin kamu sudah jauh lebih dewasa.</p>
+    <p>Mungkin impianmu sudah berubah. Mungkin hidupmu sudah berbeda.</p>
+    <p>Tetapi ada satu hal yang tidak akan berubah. Insya Allah, Kamu akan selalu menjadi adik yang Abang sayangi.</p>
+    <p>Tidak peduli berapa usiamu nanti. Tidak peduli ke mana hidup membawamu.</p>
+    <p>Selamat ulang tahun. Terima kasih telah hadir dalam hidup kami.</p>
+    <p class="sign">Dengan penuh kasih,<br><span class="fill">Arya Dinata</span></p>
+  </div>
+</section>
+
+<section class="closing" id="closing">
+  <div class="hero-particles"></div>
+  <div class="reveal">
+    <h2>Happy Birthday, <span class="fill" style="color:var(--gold-light);">Selvia Alfina Dinata</span></h2>
+    <p class="grow-lines">Keep growing.</p>
+    <p class="grow-lines">Keep smiling.</p>
+    <p class="grow-lines">Keep believing.</p>
+    <p class="tagline">The world is brighter because you are in it.</p>
+    <span class="heart">❤️</span>
+  </div>
+</section>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<div class="music-toggle" id="musicToggle" onclick="toggleMusic()">
+  <span class="music-icon">🎵</span>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <figure>
+    <img id="lightboxImg" src="" alt="">
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
+</div>
+
+<script>
+const galleryGrid = document.getElementById('galleryGrid');
+const judulKenangan = [
+  "Momen Kecil Bahagia", "Senyuman Terbaik", "Langkah Awal Perjalanan", 
+  "Hari Penuh Tawa", "Kilas Balik Masa Kecil", "Cerita di Balik Foto", 
+  "Kebersamaan Hangat", "Mengejar Impian Besar", "Hari Spesial Kita", 
+  "Momen Kreatifitas", "Belajar dan Tumbuh", "Sisi Humoris Via", 
+  "Kepingan Memori Indah", "Fokus Menggapai Cita", "Selamanya Adik Abang"
+];
+
+for(let i=1;i<=15;i++){
+  const num = String(i).padStart(2,'0');
+  const judul = judulKenangan[i-1] || "Momen Indah";
+  const fig = document.createElement('figure');
+  fig.className = 'gallery-item reveal';
+  fig.onclick = () => openLightbox('foto'+num+'.jpg','Foto '+num+' — ' + judul);
+  fig.innerHTML = `
+    <img src="foto${num}.jpg" alt="Foto ${num}" loading="lazy" onerror="this.src='https://via.placeholder.com/300?text=Memori+${num}'">
+    <figcaption>Foto ${num} — <span class="fill">${judul}</span></figcaption>
+  `;
+  galleryGrid.appendChild(fig);
+}
+
+function spawnParticles(container, count){
+  for(let i=0;i<count;i++){
+    const p = document.createElement('span');
+    p.className = 'particle';
+    const size = 3 + Math.random()*5;
+    p.style.width = size+'px'; p.style.height = size+'px';
+    p.style.left = Math.random()*100+'%';
+    p.style.animationDuration = (9 + Math.random()*10)+'s';
+    p.style.animationDelay = (Math.random()*10)+'s';
+    container.appendChild(p);
+  }
+}
+document.querySelectorAll('.hero-particles').forEach(c => spawnParticles(c, 16));
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('in-view');
+    }
+  });
+},{threshold:0.05});
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+const bgMusic = document.getElementById('bgMusic');
+const musicToggle = document.getElementById('musicToggle');
+function toggleMusic(){
+  if(bgMusic.paused){
+    bgMusic.play().then(()=>musicToggle.textContent = '⏸').catch(()=>{});
+  } else {
+    bgMusic.pause();
+    musicToggle.textContent = '🎵';
+  }
+}
+function openCelebration(){
+  document.getElementById('opening').scrollIntoView({behavior:'smooth'});
+  bgMusic.play().then(()=>musicToggle.textContent = '⏸').catch(()=>{});
+}
+function openLightbox(src, caption){
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightboxCaption').textContent = caption;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox(e){document.getElementById('lightbox').classList.remove('active');}
+</script>
+</body>
+</html>
