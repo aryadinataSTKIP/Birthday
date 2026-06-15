@@ -83,9 +83,81 @@ h1,h2,h3{font-family:'Playfair Display', serif;font-weight:600;color:var(--ink);
 }
 
 .hero-content{position:relative;z-index:2;max-width:480px;}
-.hero-name{font-size:clamp(2.4rem,9vw,3.6rem);color:#fff;margin-bottom:6px;letter-spacing:.02em;}
-.hero-text{font-size:.98rem;font-weight:300;color:#f3ece0;margin:0 auto 14px;max-width:380px;}
-.hero-date{font-family:'Cormorant Garamond', serif;font-style:italic;font-size:1.15rem;color:var(--gold-light);margin-bottom:26px;}
+
+.hero-name{
+  font-size:clamp(2.4rem,9vw,3.6rem);
+  color:#fff;
+  margin-bottom:6px;
+  letter-spacing:.02em;
+  opacity:0;
+  transition:none;
+}
+
+.hero-text{
+  font-size:.98rem;
+  font-weight:300;
+  color:#f3ece0;
+  margin:0 auto 14px;
+  max-width:380px;
+  opacity:0;
+  transition:none;
+}
+
+.hero-date{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:1.15rem;
+  color:var(--gold-light);
+  margin-bottom:26px;
+  opacity:0;
+  transition:none;
+}
+
+/* Animations for surprise reveal */
+.hero-name.reveal-surprise{
+  animation:popIn .8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.hero-text.reveal-surprise{
+  animation:slideInUp .8s cubic-bezier(.16,1,.3,1) .2s forwards;
+}
+
+.hero-date.reveal-surprise{
+  animation:slideInUp .8s cubic-bezier(.16,1,.3,1) .4s forwards;
+}
+
+@keyframes popIn{
+  0%{opacity:0;transform:scale(0.5) translateY(40px);}
+  70%{transform:scale(1.1);}
+  100%{opacity:1;transform:scale(1) translateY(0);}
+}
+
+@keyframes slideInUp{
+  0%{opacity:0;transform:translateY(30px);}
+  100%{opacity:1;transform:translateY(0);}
+}
+
+.download-btn{
+  margin-top:6px;
+  padding:14px 38px;
+  background:var(--gold-deep);
+  color:#fff;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:600;
+  font-family:'Poppins', sans-serif;
+  font-size:.95rem;
+  letter-spacing:.03em;
+  box-shadow:var(--shadow-soft);
+  transition:all .3s ease;
+}
+
+.download-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--shadow);
+  background:var(--gold);
+}
 
 .open-btn{
   margin-top:6px;
@@ -101,8 +173,15 @@ h1,h2,h3{font-family:'Playfair Display', serif;font-weight:600;color:var(--ink);
   letter-spacing:.03em;
   box-shadow:var(--shadow-soft);
   transition:all .3s ease;
+  opacity:0;
+  pointer-events:none;
 }
-.open-btn:hover{transform:translateY(-3px);box-shadow:var(--shadow); background:var(--gold);}
+
+.open-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--shadow);
+  background:var(--gold);
+}
 
 /* ====================================================================
    OPENING
@@ -417,20 +496,14 @@ h1,h2,h3{font-family:'Playfair Display', serif;font-weight:600;color:var(--ink);
 <section class="hero" id="hero">
   <div class="hero-particles"></div>
   <div class="hero-content">
-    <p class="eyebrow">Happy Birthday</p>
-    <h1 class="hero-name">Selvia Alfina Dinata</h1>
-    <div class="ornament-divider">
-      <span class="oline"></span>
-      <svg><use href="#rosette"/></svg>
-      <span class="oline right"></span>
-    </div>
+    <h1 class="hero-name">Happy Birthday, Selvia Alfina Dinata</h1>
     <p class="hero-text">
       Hari ini adalah hari yang sangat spesial. Satu tahun lagi bertambah, satu tahun lagi tumbuh,
       satu tahun lagi menjadi pribadi yang lebih kuat, lebih cerdas, dan lebih baik.
       Untuk adik perempuan terbaik yang pernah Allah titipkan dalam keluarga ini.
     </p>
     <p class="hero-date">15 Juni 2026</p>
-    <button class="open-btn" onclick="openCelebration()">🎂 Buka Ucapan</button>
+    <button class="download-btn" onclick="startSurprise()">🎉 Download Now!</button>
   </div>
 </section>
 
@@ -546,11 +619,11 @@ h1,h2,h3{font-family:'Playfair Display', serif;font-weight:600;color:var(--ink);
   </div>
 
   <div class="timeline">
-    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2007</span><p class="timeline-event">Lahir ke dunia menyejukkan hati orang tua dan melengkapi kebahagiaan keluarga.</p></div></div>
-    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2020</span><p class="timeline-event">Memulai perjalanan masa remaja dengan penuh rasa ingin tahu dan mulai belajar mandiri.</p></div></div>
-    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2023</span><p class="timeline-event">Mulai menemukan hobi bermakna dalam membaca serta mengembangkan kreativitas mengedit video.</p></div></div>
-    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2025</span><p class="timeline-event">Tumbuh menjadi sosok yang tangguh, visioner, dan memiliki mimpi besar belajar ke luar negeri.</p></div></div>
-    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2026</span><p class="timeline-event">Menginjak usia 19 tahun dengan kedewasaan berpikir yang luar biasa. Masya Allah.</p></div></div>
+    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2007</span><p class="timeline-event">Lahir ke dunia menyejukkan hati</p></div></div>
+    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2020</span><p class="timeline-event">Memulai perjalanan masa remaja</p></div></div>
+    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2023</span><p class="timeline-event">Mulai menemukan hobi bermakna</p></div></div>
+    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2025</span><p class="timeline-event">Tumbuh menjadi sosok yang tangguh</p></div></div>
+    <div class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card"><span class="timeline-year fill">2026</span><p class="timeline-event">Menginjak usia 19 tahun dengan semangat baru</p></div></div>
   </div>
 </section>
 
@@ -675,6 +748,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 const bgMusic = document.getElementById('bgMusic');
 const musicToggle = document.getElementById('musicToggle');
+
 function toggleMusic(){
   if(bgMusic.paused){
     bgMusic.play().then(()=>musicToggle.textContent = '⏸').catch(()=>{});
@@ -683,15 +757,30 @@ function toggleMusic(){
     musicToggle.textContent = '🎵';
   }
 }
-function openCelebration(){
-  document.getElementById('opening').scrollIntoView({behavior:'smooth'});
+
+function startSurprise(){
+  // Hide download button
+  document.querySelector('.download-btn').style.display = 'none';
+  
+  // Trigger animations on text
+  const heroName = document.querySelector('.hero-name');
+  const heroText = document.querySelector('.hero-text');
+  const heroDate = document.querySelector('.hero-date');
+  
+  heroName.classList.add('reveal-surprise');
+  heroText.classList.add('reveal-surprise');
+  heroDate.classList.add('reveal-surprise');
+  
+  // Play music
   bgMusic.play().then(()=>musicToggle.textContent = '⏸').catch(()=>{});
 }
+
 function openLightbox(src, caption){
   document.getElementById('lightboxImg').src = src;
   document.getElementById('lightboxCaption').textContent = caption;
   document.getElementById('lightbox').classList.add('active');
 }
+
 function closeLightbox(e){document.getElementById('lightbox').classList.remove('active');}
 </script>
 </body>
